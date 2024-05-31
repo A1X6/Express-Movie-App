@@ -30,5 +30,28 @@ exports.addMovie = (req, res) => {
     res.status(201).json(newMovie);
 };
 
+exports.updateMovie = (req, res) => {
+    const movieId = Number(req.params.id);
+    const updatedMovie = req.body;
+    const movies = readDatabase();
+    // console.log(movies)
+
+    let index = -1;
+    movies.filter((movie, i) => {
+        movie.id === movieId ? index = i : ''
+    })
+    // console.log(index)
+    if (index === -1) {
+        return res.status(404).json({ error: 'Movie not found' });
+    }
+
+    movies[index] = { ...movies[index], ...updatedMovie };
+    writeDatabase(movies);
+
+    res.status(200).json(movies[index]);
+}
+
+
+
 
 
