@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Inception",
     "director": "Christopher Nolan",
-    "year": 2010,
+    "year": 2015,
     "genre": [
       "Action",
       "Sci-Fi",
@@ -16,27 +16,7 @@
       "Ellen Page",
       "Tom Hardy"
     ],
-    "rating": 8.8,
-    "imageURL": ""
-  },
-  {
-    "id": 2,
-    "title": "Inception",
-    "director": "Christopher Nolan",
-    "year": 2020,
-    "genre": [
-      "Action",
-      "Sci-Fi",
-      "Thriller"
-    ],
-    "description": "Inception is a science fiction action film...",
-    "cast": [
-      "Leonardo DiCaprio",
-      "Joseph Gordon-Levitt",
-      "Ellen Page",
-      "Tom Hardy"
-    ],
-    "rating": 8.8,
+    "rating": 8.6,
     "imageURL": ""
   }
 ]
