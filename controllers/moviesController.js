@@ -30,5 +30,25 @@ exports.addMovie = (req, res) => {
     res.status(201).json(newMovie);
 };
 
-
-
+exports.deleteMovie = (req, res) => {
+  const id = req.params.id;
+  const movies = readDatabase();
+  newmovies = movies.filter((movie) => movie.id != parseInt(id));
+  const movieExists = movies.some(
+    (movie) => parseInt(movie.id) === parseInt(id)
+  );
+  console.log(movieExists);
+  console.log(typeof id);
+  if (!movieExists) {
+    return res
+      .status(404)
+      .json({ error: `Movie with Id: ${id} doesn't exist` });
+  }
+  fs.writeFile(databasePath, JSON.stringify(newmovies), (err) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("Internal Server Error");
+    }
+    res.status(200).json(readDatabase());
+  });
+};
