@@ -25,6 +25,10 @@ exports.getAllMovies = (req, res) => {
 exports.addMovie = (req, res) => {
   const movies = readDatabase();
   const newMovie = req.body;
+  const movieExists = movies.some(movie => movie.id === newMovie.id);
+  if (movieExists) {
+        return res.status(404).json({ error: `Movie with Id: ${newMovie.id} already exists` });
+    }
   movies.push(newMovie);
   writeDatabase(movies);
   res.status(201).json(newMovie);
