@@ -1,0 +1,81 @@
+[
+  {
+    "id": 1,
+    "title": "Interstellar",
+    "director": "Christopher Nolan",
+    "year": 2014,
+    "genre": [
+      "Adventure",
+      "Drama",
+      "Sci-Fi"
+    ],
+    "description": "Interstellar is a science fiction film about space exploration and the survival of humanity...",
+    "cast": [
+      "Matthew McConaughey",
+      "Anne Hathaway",
+      "Jessica Chastain",
+      "Michael Caine"
+    ],
+    "rating": 8.6,
+    "imageURL": ""
+  },
+  {
+    "id": 2,
+    "title": "The Matrix",
+    "director": "Lana Wachowski, Lilly Wachowski",
+    "year": 1999,
+    "genre": [
+      "Action",
+      "Sci-Fi"
+    ],
+    "description": "The Matrix is a science fiction action film that explores the nature of reality and human perception...",
+    "cast": [
+      "Keanu Reeves",
+      "Laurence Fishburne",
+      "Carrie-Anne Moss",
+      "Hugo Weaving"
+    ],
+    "rating": 8.7,
+    "imageURL": ""
+  },
+  {
+    "id": 3,
+    "title": "The Dark Knight",
+    "director": "Christopher Nolan",
+    "year": 2008,
+    "genre": [
+      "Action",
+      "Crime",
+      "Drama"
+    ],
+    "description": "The Dark Knight is a superhero film that delves into the complex relationship between Batman and the Joker...",
+    "cast": [
+      "Christian Bale",
+      "Heath Ledger",
+      "Aaron Eckhart",
+      "Michael Caine"
+    ],
+    "rating": 9,
+    "imageURL": ""
+  },
+  {
+    "id": 4,
+    "title": "Blade Runner 2049",
+    "director": "Denis Villeneuve",
+    "year": 2017,
+    "genre": [
+      "Action",
+      "Drama",
+      "Mystery"
+    ],
+    "description": "Blade Runner 2049 is a neo-noir science fiction film that continues the story of the original Blade Runner...",
+    "cast": [
+      "Ryan Gosling",
+      "Harrison Ford",
+      "Ana de Armas",
+      "Jared Leto"
+    ],
+    "rating": 8,
+    "imageURL": ""
+  }
+]

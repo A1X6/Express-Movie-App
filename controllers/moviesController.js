@@ -30,6 +30,42 @@ exports.addMovie = (req, res) => {
   res.status(201).json(newMovie);
 };
 
+exports.updateMovie = (req, res) => {
+  const id = Number(req.params.id);
+
+  const { title, director, year, genre, description, cast, rating, imageURL } =
+    req.body;
+  // console.log(updatedMovie)
+
+  const movies = readDatabase();
+  // console.log(movies)
+
+  let index = -1;
+  movies.filter((movie, i) => {
+    movie.id === id ? (index = i) : "";
+  });
+  // console.log(index)
+  if (index === -1) {
+    return res.status(404).json({ error: `No movie with Id: ${id}` });
+  }
+
+  movies[index] = {
+    id,
+    title,
+    director,
+    year,
+    genre,
+    description,
+    cast,
+    rating,
+    imageURL,
+  };
+
+  writeDatabase(movies);
+
+  res.status(200).json(movies[index]);
+};
+
 exports.deleteMovie = (req, res) => {
   const id = req.params.id;
   const movies = readDatabase();
