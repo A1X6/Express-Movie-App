@@ -7,6 +7,6 @@ const { movieSchema, movieIdSchema } = require("../validations/movie.validationS
 router.get("/", moviesController.getAllMovies);
 router.post("/", validate(movieIdSchema), validate(movieSchema), moviesController.addMovie);
 router.put("/:id", validate(movieSchema), moviesController.updateMovie);
-// router.delete('/:id', moviesController.deleteMovie);
+router.delete('/:id', moviesController.deleteMovie);
 
 module.exports = router;
