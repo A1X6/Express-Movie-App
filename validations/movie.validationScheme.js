@@ -1,11 +1,6 @@
 const { body } = require("express-validator");
 
 const movieSchema = [
-  body("id")
-    .isString()
-    .withMessage("ID must be a string")
-    .notEmpty()
-    .withMessage("ID is required"),
   body("title")
     .isString()
     .withMessage("Title must be a string")
@@ -20,4 +15,11 @@ const movieSchema = [
   body("imageURL").isString().withMessage(""),
 ];
 
-module.exports = { movieSchema };
+const movieIdSchema = [
+  body("id")
+    .notEmpty()
+    .withMessage("Id is required")
+    .isNumeric()
+    .withMessage("Id is not valid")
+];
+module.exports = { movieSchema, movieIdSchema };
