@@ -73,18 +73,16 @@ exports.updateMovie = (req, res) => {
 exports.deleteMovie = (req, res) => {
   const id = req.params.id;
   const movies = readDatabase();
-  newmovies = movies.filter((movie) => movie.id != parseInt(id));
+  const newMovies = movies.filter((movie) => movie.id != parseInt(id));
   const movieExists = movies.some(
     (movie) => parseInt(movie.id) === parseInt(id)
   );
-  console.log(movieExists);
-  console.log(typeof id);
   if (!movieExists) {
     return res
       .status(404)
       .json({ error: `Movie with Id: ${id} doesn't exist` });
   }
-  fs.writeFile(databasePath, JSON.stringify(newmovies), (err) => {
+  fs.writeFile(databasePath, JSON.stringify(newMovies), (err) => {
     if (err) {
       console.error(err);
       return res.status(500).send("Internal Server Error");
